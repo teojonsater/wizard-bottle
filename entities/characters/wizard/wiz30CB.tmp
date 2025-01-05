@@ -1,0 +1,69 @@
+[gd_scene load_steps=14 format=3 uid="uid://cvxajf34j0ai8"]
+
+[ext_resource type="Texture2D" uid="uid://3m00ft3f0wdk" path="res://entities/characters/wizard/wizard_idle_1.png" id="1_ouqmo"]
+[ext_resource type="Texture2D" uid="uid://dugd6tpibjky" path="res://entities/characters/wizard/wizard_idle_2.png" id="2_5ud4j"]
+[ext_resource type="Texture2D" uid="uid://dpljyh2crd4ft" path="res://entities/characters/wizard/wizard_idle_3.png" id="3_s3g4u"]
+[ext_resource type="Texture2D" uid="uid://cblpeu2xuoisj" path="res://entities/characters/wizard/wizard_idle_4.png" id="4_flutn"]
+[ext_resource type="Texture2D" uid="uid://c3of1cqvv1xl7" path="res://entities/characters/wizard/wizard_idle_5.png" id="5_mdffl"]
+[ext_resource type="Texture2D" uid="uid://cj2u01yl3wlvy" path="res://entities/characters/wizard/wizard_idle_6.png" id="6_4vbd7"]
+[ext_resource type="Texture2D" uid="uid://bolcliw2e2l37" path="res://entities/characters/wizard/wizard_idle_7.png" id="7_bqiqt"]
+[ext_resource type="Texture2D" uid="uid://bj01spfm4f1yv" path="res://entities/characters/wizard/wizard_idle_8.png" id="8_dlsaa"]
+[ext_resource type="Texture2D" uid="uid://c3mowp1rssovw" path="res://entities/characters/wizard/wizard_idle_9.png" id="9_0b0el"]
+[ext_resource type="Texture2D" uid="uid://ctki4ufswrlfc" path="res://entities/characters/wizard/wizard_staff.png" id="10_ia7nc"]
+[ext_resource type="Script" path="res://entities/characters/wizard/staff.gd" id="11_rhmpq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sef86"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ouqmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5ud4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s3g4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_flutn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mdffl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4vbd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bqiqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dlsaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0b0el")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldvdr"]
+size = Vector2(14, 28)
+
+[node name="Wizard" type="CharacterBody2D"]
+position = Vector2(320, 180)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sef86")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.137992
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ldvdr")
+
+[node name="Staff" type="Sprite2D" parent="."]
+position = Vector2(11, 0)
+texture = ExtResource("10_ia7nc")
+script = ExtResource("11_rhmpq")
