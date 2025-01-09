@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=4 format=3 uid="uid://c6kp4hkixi7cu"]
+
+[ext_resource type="Texture2D" uid="uid://dyuync7cubutf" path="res://icon.svg" id="1_621ai"]
+[ext_resource type="Script" path="res://spells/spell.gd" id="2_j4fkc"]
+[ext_resource type="PackedScene" uid="uid://ciyi43dyk3yjx" path="res://spells/fireball/fireball.tscn" id="3_emnse"]
+
+[resource]
+script = ExtResource("2_j4fkc")
+name = "Fireball"
+icon = ExtResource("1_621ai")
+cooldown = 5
+spell_node = ExtResource("3_emnse")

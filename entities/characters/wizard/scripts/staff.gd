@@ -17,7 +17,7 @@ func _process(delta) -> void:
 		position.y = default_pos.y + BOB_AMPLITUDE * sin(time * BOB_FREQUENCY)
 		rotation = sin(time * BOB_FREQUENCY) * ROT_AMPLITUDE
 
-func _on_cast() -> void:
+func _on_spell_cast() -> void:
 	play_cast_animation()
 
 func play_cast_animation() -> void:
