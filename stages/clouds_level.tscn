@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bop3ksel7xnos"]
+[gd_scene load_steps=3 format=3 uid="uid://bop3ksel7xnos"]
 
 [ext_resource type="PackedScene" uid="uid://cvxajf34j0ai8" path="res://entities/characters/wizard/wizard.tscn" id="1_noex7"]
+[ext_resource type="PackedScene" uid="uid://doa5g1lbt6374" path="res://stages/stage_colliders.tscn" id="2_aovtm"]
 
 [node name="CloudsLevel" type="Node2D"]
 
 [node name="Wizard" parent="." instance=ExtResource("1_noex7")]
 position = Vector2(40, 135)
+
+[node name="StageColliders" parent="." instance=ExtResource("2_aovtm")]

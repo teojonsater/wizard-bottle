@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const ACCELERATION := 300.0
-const MAX_SPEED := 90.0
+const ACCELERATION := 350.0
+const MAX_SPEED := 100.0
 
 signal cast
 

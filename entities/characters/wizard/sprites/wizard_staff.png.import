@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3m00ft3f0wdk"
-path="res://.godot/imported/wizard_idle_1.png-9e46d3d657b3f8490b036332db559d4d.ctex"
+uid="uid://ctki4ufswrlfc"
+path="res://.godot/imported/wizard_staff.png-8ed211ac4722cd8d253e867d46bc51e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/characters/wizard/wizard_idle_1.png"
-dest_files=["res://.godot/imported/wizard_idle_1.png-9e46d3d657b3f8490b036332db559d4d.ctex"]
+source_file="res://entities/characters/wizard/sprites/wizard_staff.png"
+dest_files=["res://.godot/imported/wizard_staff.png-8ed211ac4722cd8d253e867d46bc51e4.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
