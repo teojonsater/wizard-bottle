@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://doa5g1lbt6374"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_87wyt"]
+
+[node name="Stage colliders" type="StaticBody2D"]
+
+[node name="Upper bundary" type="CollisionShape2D" parent="."]
+position = Vector2(240, 0)
+rotation = -3.14159
+shape = SubResource("WorldBoundaryShape2D_87wyt")
+
+[node name="Lower boundary" type="CollisionShape2D" parent="."]
+position = Vector2(240, 270)
+shape = SubResource("WorldBoundaryShape2D_87wyt")
