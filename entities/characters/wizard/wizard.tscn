@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://entities/characters/wizard/scripts/wizard.gd" id="1_2vklt"]
 [ext_resource type="Texture2D" uid="uid://3m00ft3f0wdk" path="res://entities/characters/wizard/sprites/wizard_idle_1.png" id="1_ouqmo"]
 [ext_resource type="Texture2D" uid="uid://dugd6tpibjky" path="res://entities/characters/wizard/sprites/wizard_idle_2.png" id="2_5ud4j"]
-[ext_resource type="Script" path="res://entities/characters/wizard/spell_handler.gd" id="2_athxn"]
+[ext_resource type="Script" path="res://entities/characters/wizard/scripts/spell_handler.gd" id="2_athxn"]
 [ext_resource type="Texture2D" uid="uid://dpljyh2crd4ft" path="res://entities/characters/wizard/sprites/wizard_idle_3.png" id="3_s3g4u"]
 [ext_resource type="Texture2D" uid="uid://cblpeu2xuoisj" path="res://entities/characters/wizard/sprites/wizard_idle_4.png" id="4_flutn"]
 [ext_resource type="Texture2D" uid="uid://c3of1cqvv1xl7" path="res://entities/characters/wizard/sprites/wizard_idle_5.png" id="5_mdffl"]

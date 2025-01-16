@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://ciyi43dyk3yjx"]
+[gd_scene load_steps=4 format=3 uid="uid://btaytrypbooey"]
 
-[ext_resource type="Texture2D" uid="uid://dyuync7cubutf" path="res://icon.svg" id="1_8j1sm"]
+[ext_resource type="Script" path="res://spells/fireball/fireball.gd" id="1_rlvao"]
+[ext_resource type="Texture2D" uid="uid://ctki4ufswrlfc" path="res://entities/characters/wizard/sprites/wizard_staff.png" id="2_uby0n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bm2px"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1i3v"]
 
 [node name="Fireball" type="Area2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_8j1sm")
+script = ExtResource("1_rlvao")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_bm2px")
+shape = SubResource("RectangleShape2D_o1i3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_uby0n")
