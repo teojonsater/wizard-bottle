@@ -4,8 +4,6 @@ class_name Wizard
 const ACCELERATION := 9.0
 const MAX_SPEED := 100.0
 
-signal cast_spell
-
 func _ready() -> void:
 	self.motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 

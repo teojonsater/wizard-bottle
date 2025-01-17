@@ -5,11 +5,7 @@ var spell_cooldowns: Dictionary # {SpellResource: Timer}
 var selected_spell := 0
 
 func _ready() -> void:
-	self.equipped_spells = [
-		load("res://spells/fireball/fireball.tres"),
-		load("res://spells/bubble_shield/bubble_shield.tres"),
-		load("res://spells/boulder/boulder.tres")
-	]
+	self.equipped_spells = SpellsManager.equipped_spells
 	
 	for spell in equipped_spells:
 		var timer = Timer.new()
