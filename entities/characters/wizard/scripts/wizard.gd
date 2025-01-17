@@ -22,3 +22,7 @@ func _input(event: InputEvent) -> void:
 		var success = $SpellHandler.on_spell_cast(self)
 		if success:
 			$Staff.play_cast_animation()
+	elif event.is_action_pressed("player_cycle_spells_left"):
+		$SpellHandler.cycle_spells(-1)
+	elif event.is_action_pressed("player_cycle_spells_right"):
+		$SpellHandler.cycle_spells(1)

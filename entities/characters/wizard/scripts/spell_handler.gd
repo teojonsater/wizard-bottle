@@ -6,7 +6,9 @@ var selected_spell := 0
 
 func _ready() -> void:
 	self.equipped_spells = [
-		load("res://spells/fireball/fireball.tres")
+		load("res://spells/fireball/fireball.tres"),
+		load("res://spells/bubble_shield/bubble_shield.tres"),
+		load("res://spells/boulder/boulder.tres")
 	]
 	
 	for spell in equipped_spells:
@@ -16,8 +18,9 @@ func _ready() -> void:
 		self.spell_cooldowns[spell] = timer
 
 
-func _process(delta: float) -> void:
-	pass
+func cycle_spells(direction: int):
+	self.selected_spell = (self.selected_spell + direction + equipped_spells.size()) % equipped_spells.size()
+	print("Selected " + self.equipped_spells[self.selected_spell].name)
 
 func on_spell_cast(caster: Node2D) -> bool:
 	var equipped_spell: SpellResource = self.equipped_spells[selected_spell]

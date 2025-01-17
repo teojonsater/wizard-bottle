@@ -5,8 +5,8 @@ extends BaseSpell
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	super()
 	# self.position = self.caster.position + self.spawn_offset
-	print("Fireball!")
 
 
 func _process(delta: float) -> void:

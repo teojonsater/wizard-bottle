@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://2lq2mqhve4c1"]
+
+[ext_resource type="Script" path="res://spells/boulder/boulder.gd" id="1_rqa3y"]
+
+[node name="Boulder" type="Node2D"]
+script = ExtResource("1_rqa3y")
