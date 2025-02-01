@@ -8,7 +8,7 @@ var direction: int:
 		direction = 1 if value == 0 else sign(value)
 
 func _ready() -> void:
-	print(caster.to_string() + " Is casting " + self.spell_resource.name)
+	print(caster.to_string() + " cast " + self.spell_resource.name)
 
 func cast() -> void:
 	self.caster.get_tree().root.add_child(self)

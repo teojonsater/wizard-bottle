@@ -54,6 +54,7 @@ animations = [{
 }]
 
 [node name="Wizard" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_2vklt")
 
 [node name="SpellHandler" type="Node" parent="."]

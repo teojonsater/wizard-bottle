@@ -5,12 +5,14 @@
 
 [node name="CloudsLevel" type="Node2D"]
 
-[node name="Wizard" parent="." instance=ExtResource("1_noex7")]
+[node name="WizardOne" parent="." instance=ExtResource("1_noex7")]
 position = Vector2(40, 135)
 direction = 1
+input_mappings = "player_one"
 
-[node name="Wizard2" parent="." instance=ExtResource("1_noex7")]
+[node name="WizardTwo" parent="." instance=ExtResource("1_noex7")]
 position = Vector2(440, 135)
 direction = -1
+input_mappings = "player_two"
 
 [node name="StageColliders" parent="." instance=ExtResource("2_aovtm")]
