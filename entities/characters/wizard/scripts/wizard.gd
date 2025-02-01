@@ -1,11 +1,16 @@
 extends CharacterBody2D
 class_name Player
 
+@export var direction: int:
+	set(value):
+		direction = 1 if value == 0 else sign(value)
+
 const ACCELERATION := 9.0
 const MAX_SPEED := 100.0
 
 func _ready() -> void:
 	self.motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
+	flip()
 
 func _physics_process(_delta: float) -> void:
 	var movement_dir := Input.get_axis("player_up", "player_down")
@@ -24,3 +29,8 @@ func _input(event: InputEvent) -> void:
 		$SpellHandler.cycle_spells(-1)
 	elif event.is_action_pressed("player_cycle_spells_right"):
 		$SpellHandler.cycle_spells(1)
+
+func flip():
+	$SpellHandler.direction = self.direction
+	$Staff.set_flip(self.direction)
+	$Sprite.flip_h = self.direction < 0

@@ -3,6 +3,9 @@ extends Node
 var equipped_spells: Array[SpellResource]
 var spell_cooldowns: Dictionary # {SpellResource: Timer}
 var selected_spell := 0
+var direction: int:
+	set(value):
+		direction = 1 if value == 0 else sign(value)
 
 func _ready() -> void:
 	self.equipped_spells = SpellsManager.equipped_spells
@@ -14,8 +17,8 @@ func _ready() -> void:
 		self.spell_cooldowns[spell] = timer
 
 
-func cycle_spells(direction: int):
-	self.selected_spell = (self.selected_spell + direction + equipped_spells.size()) % equipped_spells.size()
+func cycle_spells(cycle_direction: int):
+	self.selected_spell = (self.selected_spell + cycle_direction + equipped_spells.size()) % equipped_spells.size()
 	print("Selected " + self.equipped_spells[self.selected_spell].name)
 
 func on_spell_cast(caster: Node2D) -> bool:
@@ -34,6 +37,7 @@ func on_spell_cast(caster: Node2D) -> bool:
 	spell_timer.start(equipped_spell.cooldown)
 	equipped_spell_node.caster = caster
 	equipped_spell_node.spell_resource = equipped_spell
+	equipped_spell_node.direction = self.direction
 	equipped_spell_node.cast()
 	
 	return true
