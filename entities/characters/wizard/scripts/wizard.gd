@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Wizard
+class_name Player
 
 const ACCELERATION := 9.0
 const MAX_SPEED := 100.0

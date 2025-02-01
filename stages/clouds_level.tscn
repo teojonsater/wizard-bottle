@@ -8,4 +8,7 @@
 [node name="Wizard" parent="." instance=ExtResource("1_noex7")]
 position = Vector2(40, 135)
 
+[node name="Wizard2" parent="." instance=ExtResource("1_noex7")]
+position = Vector2(440, 135)
+
 [node name="StageColliders" parent="." instance=ExtResource("2_aovtm")]
