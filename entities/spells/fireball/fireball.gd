@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	self.position.x += speed * delta
+	self.translate(Vector2(speed * delta, 0))
 
 
 func _on_screen_exit() -> void:

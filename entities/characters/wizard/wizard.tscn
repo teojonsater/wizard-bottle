@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cvxajf34j0ai8"]
+[gd_scene load_steps=19 format=3 uid="uid://cvxajf34j0ai8"]
 
 [ext_resource type="Script" path="res://entities/characters/wizard/scripts/wizard.gd" id="1_2vklt"]
 [ext_resource type="Texture2D" uid="uid://3m00ft3f0wdk" path="res://entities/characters/wizard/sprites/wizard_idle_1.png" id="1_ouqmo"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://entities/characters/wizard/scripts/staff.gd" id="11_rhmpq"]
 [ext_resource type="Shape2D" uid="uid://bsty828x6uo13" path="res://entities/characters/wizard/collision_shape.tres" id="12_haaq5"]
 [ext_resource type="PackedScene" uid="uid://d35aejdauh71b" path="res://components/health_component/health_component.tscn" id="14_8i8a4"]
+[ext_resource type="PackedScene" uid="uid://cq27r5hqetmsj" path="res://components/hitbox_component/hitbox_component.tscn" id="16_h6wna"]
 [ext_resource type="PackedScene" uid="uid://c5cbdppuft0mq" path="res://components/hurtbox_component/hurtbox_component.tscn" id="17_77a7o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sef86"]
@@ -61,8 +62,9 @@ script = ExtResource("2_athxn")
 [node name="HealthComponent" parent="." instance=ExtResource("14_8i8a4")]
 max_health = 20
 
-[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("17_77a7o")]
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component", "hitbox_component") instance=ExtResource("17_77a7o")]
 health_component = NodePath("../HealthComponent")
+hitbox_component = NodePath("../HitboxComponent")
 
 [node name="HurtCollider" type="CollisionShape2D" parent="HurtboxComponent"]
 position = Vector2(0, 0.5)
@@ -83,3 +85,10 @@ shape = ExtResource("12_haaq5")
 position = Vector2(12, -0.5)
 texture = ExtResource("10_ia7nc")
 script = ExtResource("11_rhmpq")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("16_h6wna")]
+damage = 100000
+
+[node name="HurtCollider" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0, 0.5)
+shape = ExtResource("12_haaq5")
