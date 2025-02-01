@@ -17,7 +17,7 @@ func unequip_spell(spell: SpellResource):
 	self.equipped_spells.remove_at(self.equipped_spells.find(spell))
 
 func load_spells():
-	var base_dir: String = "res://spells/"
+	var base_dir: String = "res://entities/spells/"
 	var spell_folders: DirAccess = DirAccess.open(base_dir)
 	
 	if spell_folders == null:
@@ -34,7 +34,8 @@ func load_spells():
 		spell_directory.list_dir_begin()
 		var file_name: String = spell_directory.get_next()
 		while file_name != "":
-			if !spell_directory.current_is_dir() && file_name.ends_with(".tres"):
+			if !spell_directory.current_is_dir() && file_name.ends_with("_res.tres"):
+				print(file_name)
 				var loaded_resource: String = base_dir + directory + '/' + file_name
 				print("Loaded spell: " + loaded_resource)
 				self.equipped_spells.append(load(loaded_resource))

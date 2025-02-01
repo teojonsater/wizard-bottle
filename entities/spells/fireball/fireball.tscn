@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://btaytrypbooey"]
 
-[ext_resource type="Script" path="res://spells/fireball/fireball.gd" id="1_rlvao"]
-[ext_resource type="Shape2D" uid="uid://bywi3pvhys368" path="res://spells/fireball/collision_shape.tres" id="2_jmqqm"]
-[ext_resource type="Texture2D" uid="uid://c28jwpq7g4lwx" path="res://spells/fireball/fireball.png" id="2_mhmnf"]
+[ext_resource type="Script" path="res://entities/spells/fireball/fireball.gd" id="1_rlvao"]
+[ext_resource type="Shape2D" uid="uid://bywi3pvhys368" path="res://entities/spells/fireball/collision_shape.tres" id="2_jmqqm"]
+[ext_resource type="Texture2D" uid="uid://c28jwpq7g4lwx" path="res://entities/spells/fireball/fireball.png" id="2_mhmnf"]
 [ext_resource type="PackedScene" uid="uid://d35aejdauh71b" path="res://components/health_component/health_component.tscn" id="3_7k20y"]
 [ext_resource type="PackedScene" uid="uid://c5cbdppuft0mq" path="res://components/hurtbox_component/hurtbox_component.tscn" id="5_fphpk"]
 [ext_resource type="PackedScene" uid="uid://cq27r5hqetmsj" path="res://components/hitbox_component/hitbox_component.tscn" id="6_nd0g0"]
