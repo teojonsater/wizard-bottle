@@ -22,4 +22,5 @@ func take_damage(amount: int) -> void:
 	self.health_changed.emit(self.health)
 
 func health_zero():
+	self.get_parent().queue_free()
 	self.died.emit()
