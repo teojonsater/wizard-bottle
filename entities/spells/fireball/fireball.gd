@@ -6,11 +6,12 @@ extends BaseSpell
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
-	self.position = self.caster.position + self.spawn_offset
+	self.position = self.caster.position + self.spawn_offset * self.direction
+	$Sprite.flip_h = self.direction < 0
 
 
 func _process(delta: float) -> void:
-	self.translate(Vector2(speed * delta, 0))
+	self.translate(Vector2(speed * delta * self.direction, 0))
 
 
 func _on_screen_exit() -> void:

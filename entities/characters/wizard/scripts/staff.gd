@@ -8,15 +8,30 @@ const ATTACK_MOVE_DIST := 15
 const ATTACK_MOVE_ROT := 60
 const ATTACK_MOVE_DUR := 1.0
 
-var default_pos := self.position
+var default_pos : Vector2
 var time := 0.0
 var is_idle = true
+var direction: int = 1:
+	set(value):
+		direction = 1 if value == 0 else sign(value)
+
+func _ready() -> void:
+	randomize()
+	self.time = randf_range(0, PI)
 
 func _process(delta) -> void:
 	if self.is_idle:
+		if self.time >= PI:
+			self.time = 0
 		self.time += delta * BOB_FREQUENCY
 		self.position.y = self.default_pos.y + BOB_AMPLITUDE * sin(self.time * BOB_FREQUENCY)
 		self.rotation = sin(self.time * BOB_FREQUENCY) * ROT_AMPLITUDE
+
+func set_flip(new_direction: int):
+	self.direction = new_direction
+	self.position.x = 12 * new_direction
+	self.default_pos = self.position
+	self.flip_h = new_direction < 0
 
 func play_cast_animation() -> void:
 	if self.is_idle == false: return
@@ -25,8 +40,8 @@ func play_cast_animation() -> void:
 	const MOVE_OUT_TIME = ATTACK_MOVE_DUR * 0.3
 	const PAUSE_TIME = ATTACK_MOVE_DUR * 0.3
 	
-	var target_pos = self.default_pos + Vector2(ATTACK_MOVE_DIST, 0)
-	var target_rot = ATTACK_MOVE_ROT
+	var target_pos = self.default_pos + Vector2(ATTACK_MOVE_DIST, 0) * self.direction
+	var target_rot = ATTACK_MOVE_ROT * self.direction
 	
 	var tween = create_tween().set_parallel()
 	tween.tween_property(self, "position", target_pos, MOVE_OUT_TIME)\
