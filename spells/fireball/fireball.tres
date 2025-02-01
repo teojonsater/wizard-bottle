@@ -8,5 +8,5 @@
 script = ExtResource("2_ycqa5")
 name = "Fireball"
 icon = ExtResource("1_nsbdx")
-cooldown = 1.5
+cooldown = 0.1
 spell_scene = ExtResource("3_415vm")

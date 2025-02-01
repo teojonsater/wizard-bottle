@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://btaytrypbooey"]
+[gd_scene load_steps=5 format=3 uid="uid://btaytrypbooey"]
 
 [ext_resource type="Script" path="res://spells/fireball/fireball.gd" id="1_rlvao"]
 [ext_resource type="Texture2D" uid="uid://c28jwpq7g4lwx" path="res://spells/fireball/fireball.png" id="2_mhmnf"]
+[ext_resource type="PackedScene" uid="uid://d35aejdauh71b" path="res://components/health_component/health_component.tscn" id="3_7k20y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1i3v"]
 size = Vector2(15, 11)
@@ -12,6 +13,7 @@ script = ExtResource("1_rlvao")
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_o1i3v")
+disabled = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_mhmnf")
@@ -19,5 +21,7 @@ texture = ExtResource("2_mhmnf")
 [node name="OnScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-10.5, 0.5)
 scale = Vector2(1.85, 0.55)
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_7k20y")]
 
 [connection signal="screen_exited" from="OnScreenNotifier" to="." method="_on_screen_exit"]
